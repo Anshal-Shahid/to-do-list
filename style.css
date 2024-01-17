@@ -1,0 +1,258 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body,html{
+    width: 100%;
+    overflow-x: clip;
+}
+
+
+main{
+    height: auto;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+
+.top{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.top h1{
+    color: cadetblue;
+    font-size: 7vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+}
+
+.top input{
+    /* border: none; */
+    width: 80%;
+    height: 6vh;
+    font-size: 1.3rem;
+    padding-left: 1vw;
+    border: none;
+    border: 1.5px solid cadetblue ;
+}
+
+.top input::placeholder{
+    color: rgb(77, 77, 77);
+}
+
+.top input:focus{
+  outline: none;
+}
+.input-2{
+border: 2.9px solid rgb(82, 140, 142) !important; 
+}
+
+
+
+.input-div{
+display: flex;
+align-items: center;
+}
+.top button{
+    width: 7vw;
+    height: 4vh;
+    margin-left: 1.5vw;
+    border-radius: 0% 100% 100% 0% / 100% 50% 50% 0% ;
+    border: none;
+    /* rotate: 180deg; */
+    transform: rotateY(180deg);
+    background-color: cadetblue;
+    color: white;
+    
+    /* margin-top: 2vh; */
+    /* margin-top: 1vh; */
+}
+
+
+.list{
+    /* background-color: aliceblue; */
+    width: 75%;
+    margin-top: 6vh;
+    min-height: 70vh;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey ;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6vh;
+    padding: 0 0vw;
+    /* background-color:antiquewhite; */
+}
+
+.list-div{
+    height: auto;
+    position: relative;
+   
+    position: relative;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    gap: 0vw;
+    width: 100%;
+}
+.p:hover{
+border: 1px solid cadetblue;
+opacity: .8;
+background-color: rgba(95, 158, 160, 0.076);
+
+}
+.p{
+    border: 1px solid rgba(128, 128, 128, 0.835);
+    width: 55vw;
+    margin-right: 1vw;
+    height: 5.5vh;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    position: relative;
+    border-radius: .4vw;
+
+}
+.list-div .info p{
+    /* display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden; */
+   
+    font-size: 3.2vw;
+    
+    padding: 0 1vw;
+    width: 100%;
+    
+}
+.serial{
+    color: black;
+    position: relative;
+    right: 5vw;
+    width: 4vw;
+    border: none !important;
+    font-size: 1.7rem;
+    /* background-color: aqua; */
+    /* z-index: 100; */
+    
+}
+
+.deleted{
+/* s     position: absolute; */
+right: 0;
+
+margin:0 2vw;
+}
+.deleted button{
+    background-color: rgb(229, 3, 3);
+    border: none;
+    border-radius: .2vw;
+    height: 4.2vh;
+    width: 6.4vw;
+    color: white;
+    text-transform: capitalize;
+    position: relative;
+    right: 1vw;
+    border-radius: .4vw;
+}
+.deleted button:hover{
+    background-color: rgb(255, 63, 63);
+}
+
+
+.edited button{
+    border-radius: .4vw;
+    background-color: cadetblue;
+    border: none;
+    /* border: 1px solid grey; */
+    border-radius: .2vw;
+    height: 4.2vh;
+    width: 5.9vw;
+    color: white;
+    text-transform: capitalize;
+    position: relative;
+    /* right: 3vw; */
+}
+.edited button:hover{
+    background-color: rgb(107, 185, 188);
+}
+
+.list-popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 65vh;
+    width: 65vw;
+    background-color: rgb(178, 178, 178);
+    z-index: 10;
+    border-radius: 1.4vw;
+    overflow: hidden;
+    border: 1px solid grey;
+
+    
+    opacity: 0;
+}
+
+.list-popup input{
+    padding: 0 1vw;
+    border: none;
+    width: 100%;
+    height: 104vh;
+    position: relative;
+    bottom: 47vh;
+    font-size: 2.5vw;
+    text-align: start;
+   
+}
+
+.list-popup .save{
+    z-index: 100;
+    position: relative;
+
+    border: none;
+    background-color: cadetblue;
+    font-size: 1.9vw;
+    font-weight: 600;
+    width: 7vw;
+    height: 6vh;
+    color: white;
+    left: 56vw;
+}
+
+textarea{
+    width: 100%;
+    height: 90%;
+    border: none;
+    resize: none;
+    font-size: 2.8vw;
+    padding: 1vh 1vw;
+    margin-bottom: 1.3vh;
+}
+textarea:focus{
+    border: none;
+    /* object-position: center; */
+}
+.textarea{
+    display: flex;
+    /* justify-content: center; */
+}
+
+.list-div-10-p{
+right:1.32vw;
+}
+
+.list-div-10-btn{
+    position: relative;
+    right: 1.3vw;
+}
+
+.list-div-10-serial{
+    position: relative;
+    right: 5.5vw !important;
+}
