@@ -1,9 +1,21 @@
-let arr = []
+
+
+let arr;
+
+if(JSON.parse(localStorage.getItem("arr2"))!=null){  
+ arr=JSON.parse(localStorage.getItem("arr2"))   
+}
+
+else{
+arr = []
+}
+
+
 let inp = document.querySelector("#input")
 let btn = document.querySelector("#button")
 let list = document.querySelector(".list")
 
-let h1 = document.querySelector(".top h1")
+let cross=document.querySelector(".cross")
 
 let edit = document.querySelector(".edited button")
 let popup = document.querySelector(".list-popup")
@@ -16,8 +28,24 @@ let val;
 let a = 0;
 let y = 0
 var dlt;
-let f
+let f;
 
+
+
+cross.addEventListener("click",()=>{
+    gsap.to(".list-popup", {
+        duration: .2,
+        scale: 0,
+        transformOrigin: "center"
+    })
+})
+
+
+
+
+// localStorage.removeItem("arr2")
+
+// console.log(JSON.parse(localStorage.getItem("arr2")),"sjds");
 function func() {
     a = 0
     y = 0
@@ -75,10 +103,9 @@ function func() {
     if (y = 1) {
         dlt = document.querySelectorAll(".deleted button")
         edt = document.querySelectorAll(".edited button")
-        console.log(edt);
+      
 
     }
-
 
     dlt.forEach(dlts => {
         dlts.addEventListener("click", (e,) => {
@@ -87,20 +114,22 @@ function func() {
 
             f--
 
+            arr=JSON.parse(localStorage.getItem("arr2"))
             arr.splice(f, 1)
-            func();
+            localStorage.setItem("arr2",JSON.stringify(arr))
+            func()
 
         })
 
     })
-
+   
     edt.forEach(element => {
         element.addEventListener("click", () => {
-            console.log("sds");
             f = 0
             f = event.target.value
+            arr=JSON.parse(localStorage.getItem("arr2"))
             popup_value = arr[f - 1]
-            console.log(popup_value);
+            
             popup_input.value = popup_value
 
             gsap.to(".list-popup", {
@@ -118,12 +147,31 @@ function func() {
     inp.classList.remove("input-2")
 
 }
+
+
+function func2() {
+    arr=JSON.parse(localStorage.getItem("arr2"))
+    func()
+}
+
+if(JSON.parse(localStorage.getItem("arr2"))!=null){
+    func2()
+}
+// localStorage.removeItem("arr2")
 let final_val;
 save_btn.addEventListener("click", () => {
     final_val = popup_input.value
+    let u=JSON.parse(localStorage.getItem("arr2"))
+    
+    if(JSON.parse(localStorage.getItem("arr2"))!=null){
+        arr.concat(u)
+    }
+    else{
+        arr=u
+    }
+
     arr[f - 1] = final_val
-
-
+    localStorage.setItem("arr2",JSON.stringify(arr))
 
     gsap.to(".list-popup", {
         duration: .2,
@@ -133,15 +181,10 @@ save_btn.addEventListener("click", () => {
 
     func();
 
-
 })
 
 
 
-
-h1.addEventListener("click", () => {
-    console.log(edt);
-})
 // function func(){
 
 
@@ -213,9 +256,34 @@ h1.addEventListener("click", () => {
 
 
 let tl = gsap.timeline();
+let arr3=[]; 
+arr=[]
+
+
+// localStorage.removeItem("arr2")
+
+function get_and_set_localStorage() {
+
+    if(JSON.parse(localStorage.getItem("arr2")) !=null){
+
+        arr3=JSON.parse(localStorage.getItem("arr2"))
+      }
+        arr=inp.value
+        arr3.push(arr)
+        localStorage.setItem("arr2",JSON.stringify(arr3))
+        arr=JSON.parse(localStorage.getItem("arr2"))
+        
+}
+
+// get_and_set_localStorage();
 
 btn.addEventListener("click", () => {
-    arr.push(inp.value)
+
+    get_and_set_localStorage()
+    // console.log(JSON.parse(localStorage.getItem("arr2")));
+
+    // arr.push(inp.value)
+    
     setTimeout(func, 300)
 
     setTimeout(() => {
@@ -252,23 +320,15 @@ gsap.to(".list-popup", {
 })
 
 
-edit.addEventListener("click", () => {
+// edit.addEventListener("click", () => {
 
-    gsap.to(".list-popup", {
-        opacity: 1,
-        scale: 1,
+//     gsap.to(".list-popup", {
+//         opacity: 1,
+//         scale: 1,
 
-        transformOrigin: "center",
-
-
-    })
-
-})
-console.log(popup);
+//         transformOrigin: "center",
 
 
-
-
-// body.addEventListener("click",()=>{
+//     })
 
 // })
