@@ -247,9 +247,11 @@ margin:0 2vw;
     align-items: center;
     right: 0;
     border-bottom-left-radius: .3vw;
+    user-select: none;
 }
 .cross:hover{
     background-color: rgb(222, 2, 2);
+    /* user-select: none; */
 }
 
 
